@@ -9,7 +9,6 @@ public class Task implements Runnable {
 
   @Override
   public void run() {
-
     System.out.println("start task " + name);
     try {
       Thread.sleep(1000);
