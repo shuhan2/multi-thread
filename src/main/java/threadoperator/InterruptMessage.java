@@ -13,7 +13,7 @@ public class InterruptMessage implements Runnable {
     for (String s : importantInfo) {
       Thread thread = Thread.currentThread();
       try {
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         System.out.println(s);
       } catch (InterruptedException e) {
         System.out.println(thread.getState());

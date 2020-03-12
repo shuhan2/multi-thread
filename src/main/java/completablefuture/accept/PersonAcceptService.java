@@ -1,11 +1,13 @@
 package completablefuture.accept;
 
-import completablefuture.demo.AddressRepository;
-import completablefuture.demo.EmailRepository;
 import completablefuture.demo.Person;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static java.util.concurrent.CompletableFuture.supplyAsync;
 
@@ -21,7 +23,7 @@ public class PersonAcceptService {
 
   public Person getPersonByFuture() {
     ExecutorService executorService = Executors.newFixedThreadPool(2);
-    CompletableFuture<String> email = supplyAsync(() -> emailRepository.provideEmail());
+    CompletableFuture<String> email = supplyAsync(() -> emailRepository.provideEmail1());
 
     CompletableFuture<String> address = supplyAsync(() -> addressRepository.provideAddress());
     String join = address.join();

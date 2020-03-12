@@ -12,13 +12,12 @@ public class SharedDemo {
     SharedCounter sharedCounter = new SharedCounter();
 
     ExecutorService executor = Executors.newFixedThreadPool(5);
-    IntStream.range(0, 10).forEach(i -> executor.submit(sharedCounter::add));
+    IntStream.range(0, 1000).forEach(i -> executor.submit(sharedCounter::add));
 
     executor.shutdown();
     executor.awaitTermination(1000, TimeUnit.SECONDS);
 
     System.out.println(sharedCounter.getCounter());
-    System.out.println(executor.isTerminated());
 
   }
 

@@ -1,4 +1,4 @@
-package completablefuture.wait;
+package wait;
 
 public class App {
 

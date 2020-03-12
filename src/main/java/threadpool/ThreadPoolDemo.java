@@ -15,6 +15,7 @@ public class ThreadPoolDemo {
     }
     // no new tasks will be accepted
     executorService.shutdown();
+    executorService.awaitTermination(100, TimeUnit.MILLISECONDS);
   }
 
 }

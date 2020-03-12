@@ -1,20 +1,20 @@
-package completablefuture.wait;
+package wait;
 
 public class GuardedBoy {
-  boolean joy;
+  boolean isJoy;
   public void achieveJoy() {
     // Simple loop guard. Wastes
     // processor time. Don't do this!
-    while(!joy) {
+    while(!isJoy) {
 
     }
     System.out.println("Joy has been achieved!");
   }
 
   public synchronized void achieveJoyAndEfficiency() {
-    // This guard only loops once for each special event, which may not
-    // be the event we're waiting for.
-    while(!joy) {
+    // This guard only loops once for each special event,
+    // which may not be the event we're waiting for.
+    while(!isJoy) {
       try {
         wait();
       } catch (InterruptedException e) {}
@@ -25,7 +25,7 @@ public class GuardedBoy {
   public synchronized void notifyJoy() {
 
     //do something
-    joy = true;
+    isJoy = true;
     notifyAll();
   }
 

@@ -1,4 +1,4 @@
-package completablefuture.wait;
+package wait;
 
 public class WaitService {
   Data data = new Data();
@@ -78,7 +78,7 @@ public class WaitService {
     }
   }
 
-  static class Receiver implements Runnable {
+  class Receiver implements Runnable {
 
     private Data load;
 

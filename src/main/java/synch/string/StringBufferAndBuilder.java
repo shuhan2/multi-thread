@@ -1,4 +1,4 @@
-package completablefuture.string;
+package synch.string;
 
 public class StringBufferAndBuilder {
 

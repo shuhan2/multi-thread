@@ -20,16 +20,18 @@ public class CounterTest {
 //    Counter counter = new Counter();
 
     IntStream.range(0, 1000).forEach(i -> executor.submit(this::increment));
+    executor.shutdown();
     executor.awaitTermination(1000, TimeUnit.MILLISECONDS);
 
     assertEquals(1000, getValue()); // 1000
   }
 
   private synchronized void increment() {
+
     count++;
   }
 
-  private synchronized int getValue() {
+  private  int getValue() {
     return count;
   }
 

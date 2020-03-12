@@ -2,6 +2,7 @@ package completablefuture.demo;
 
 import java.util.concurrent.CompletableFuture;
 
+import static java.util.concurrent.CompletableFuture.runAsync;
 import static java.util.concurrent.CompletableFuture.supplyAsync;
 
 public class PersonService {
@@ -19,11 +20,12 @@ public class PersonService {
     long startTime = System.nanoTime();
     CompletableFuture<String> email = supplyAsync(() -> emailRepository.provideEmail());
 
+    //note : runAsync
+
+
     CompletableFuture<String> address = supplyAsync(() -> addressRepository.provideAddress());
 
     Person person =  new Person(email.join(), address.join());
-//    System.out.println( System.nanoTime() -  startTime);
-    System.out.println(Thread.currentThread());
     return person;
   }
 

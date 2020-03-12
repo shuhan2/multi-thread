@@ -10,8 +10,8 @@ public class Counter {
   private static int number = 0;
 
   public static void increment() {
-
     number++;
+
 
   }
 
@@ -23,9 +23,9 @@ public class Counter {
     ExecutorService executor = Executors.newFixedThreadPool(1);
     IntStream.range(0, 1000).forEach(i -> executor.submit(Counter::increment));
 
+    executor.shutdown();
     executor.awaitTermination(1000, TimeUnit.MILLISECONDS);
 
-//    executor.shutdown();
 
     System.out.println(getValue());   //1000
   }
