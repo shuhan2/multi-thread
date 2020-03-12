@@ -13,9 +13,8 @@ public class ThreadPoolDemo {
     for (int i = 0; i < 9; i++) {
       executorService.submit(new Task("" + i));
     }
-    // 关闭线程池:
+    // no new tasks will be accepted
     executorService.shutdown();
-
   }
 
 }

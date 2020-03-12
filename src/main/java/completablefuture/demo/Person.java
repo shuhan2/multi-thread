@@ -1,4 +1,4 @@
-package completablefuture;
+package completablefuture.demo;
 
 public class Person {
   private String address;
