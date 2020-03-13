@@ -1,10 +1,5 @@
 package lock.deadlock;
 
-/**
- * Learn Java from https://www.liaoxuefeng.com/
- * 
- * @author liaoxuefeng
- */
 public class DeadLock {
 
 	static final Object LOCK_A = new Object();
@@ -33,12 +28,11 @@ class Thread1 extends Thread {
 			System.out.println("Thread-1: lock A got.");
 			DeadLock.sleep1s();
 			System.out.println("Thread-1: try get lock B...");
-			synchronized (DeadLock.LOCK_B) {
-				System.out.println("Thread-1: lock B got.");
-				DeadLock.sleep1s();
-			}
+
 			System.out.println("Thread-1: lock B released.");
-		}
+		}//unlock LOCK_A
+
+
 		System.out.println("Thread-1: lock A released.");
 	}
 }
@@ -52,10 +46,7 @@ class Thread2 extends Thread {
 			System.out.println("Thread-2: lock B got.");
 			DeadLock.sleep1s();
 			System.out.println("Thread-2: try get lock A...");
-			synchronized (DeadLock.LOCK_A) {
-				System.out.println("Thread-2: lock A got.");
-				DeadLock.sleep1s();
-			}
+
 			System.out.println("Thread-2: lock A released.");
 		}
 		System.out.println("Thread-2: lock B released.");

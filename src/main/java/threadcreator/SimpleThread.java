@@ -1,4 +1,4 @@
-package threadcteator;
+package threadcreator;
 
 public class SimpleThread extends Thread {
 

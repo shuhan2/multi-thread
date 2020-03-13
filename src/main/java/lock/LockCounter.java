@@ -1,35 +1,26 @@
 package lock;
 
 import java.util.concurrent.locks.ReentrantLock;
-import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-class SharedCounterTest {
+public class LockCounter {
 
   ReentrantLock lock = new ReentrantLock();
-  int counter = 0;
+  private int counter = 0;
 
   public void add() {
+    //Acquires the lock
     lock.lock();
     try {
       counter++;
     } finally {
+      //release this lock
       lock.unlock();
+
     }
   }
-
   public int getCounter() {
-    lock.lock();
-    try {
-      return counter;
-    } finally {
-      lock.unlock();
-    }
+    return counter;
   }
 
-  @Test
-  void name() {
 
-  }
 }

@@ -1,8 +1,7 @@
-package completablefuture.accept;
+package completablefuture.combine;
 
 public class AddressRepository {
   public String provideAddress() {
-    System.out.println(Thread.currentThread());
 
     return "example-address";
   }

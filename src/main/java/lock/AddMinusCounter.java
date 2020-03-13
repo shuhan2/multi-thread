@@ -4,20 +4,26 @@ public class AddMinusCounter {
 
   private int counter = 0;
 
-  public synchronized void add() {
-    try {
-      counter++;
-    } finally {
 
-    }
+  //0
+  // add 1
+  // minus -1
+  public void add() {
+//    try {
+    synchronized(this) {
+      counter++;
+    }  // release
+
+//    } finally {
+//
+//    }
 
   }
 
-  public synchronized void minus() {
-    try {
-      counter--;
-    } finally {
+  public void minus() {
 
+    synchronized(this) {
+      counter--;
     }
   }
 

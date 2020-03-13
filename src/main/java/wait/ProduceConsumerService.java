@@ -7,10 +7,12 @@ public class ProduceConsumerService {
   //the producer, that creates the data
   //the consumers, that do some action with data
   //the consumer thread must not attempt to retrieve the data before the producer thread has delivered it
-  //the producer thread must not attempt to deliver new data if the consumer hasn't retrieved the old data
+  //the producer thread must not attempt to deliver new data if the consu5mer hasn't retrieved the old data
   MessageMachine drop = new MessageMachine();
   Thread produceThread = new Thread(new Producer(drop));
   Thread consumerThread = new Thread(new Consumer(drop));
+
+
 
   public void run() {
     produceThread.start();

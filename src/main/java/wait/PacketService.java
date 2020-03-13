@@ -1,6 +1,6 @@
 package wait;
 
-public class WaitService {
+public class PacketService {
   Data data = new Data();
   Thread sender = new Thread(new Sender(data));
   Thread receiver = new Thread(new Receiver(data));

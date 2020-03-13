@@ -3,7 +3,8 @@ package lock.deadlock;
 public class BowGame {
 
   //Friend
-  static class Friend {
+  //
+   static class Friend {
 
     private final String name;
 
@@ -30,11 +31,9 @@ public class BowGame {
     }
   }
 
-  public static void main(String[] args) throws InterruptedException {
-    final Friend boy =
-        new Friend("Boy");
-    final Friend girl =
-        new Friend("Girl");
+  public static void main(String[] args)  {
+    final Friend boy = new Friend("Boy");
+    final Friend girl = new Friend("Girl");
     new Thread(() -> boy.bow(girl)).start();
 
     new Thread(() -> girl.bow(boy)).start();

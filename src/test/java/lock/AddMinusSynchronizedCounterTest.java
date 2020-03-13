@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class AddMinusCounterTest {
+class AddMinusSynchronizedCounterTest {
 
   @Test
   void should_return_0() throws InterruptedException {
@@ -21,9 +21,8 @@ class AddMinusCounterTest {
       addMinusCounter.minus();
     }));
 
-
     executorService.shutdown();
-    executorService.awaitTermination(100, TimeUnit.MILLISECONDS);
+    executorService.awaitTermination(1000, TimeUnit.MILLISECONDS);
 
     assertEquals(0, addMinusCounter.getCounter());
   }

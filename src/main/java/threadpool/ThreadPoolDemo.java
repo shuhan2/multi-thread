@@ -15,7 +15,11 @@ public class ThreadPoolDemo {
     }
     // no new tasks will be accepted
     executorService.shutdown();
-    executorService.awaitTermination(100, TimeUnit.MILLISECONDS);
+
+    //Blocks until all tasks have completed execution after a shutdown request
+    executorService.awaitTermination(10000, TimeUnit.MILLISECONDS);
+
+    System.out.println("Main thread");
   }
 
 }

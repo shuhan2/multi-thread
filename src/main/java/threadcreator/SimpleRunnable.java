@@ -1,6 +1,4 @@
-package threadcteator;
-
-import java.util.concurrent.Callable;
+package threadcreator;
 
 public class SimpleRunnable implements Runnable {
 

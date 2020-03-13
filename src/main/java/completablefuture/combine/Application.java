@@ -1,4 +1,4 @@
-package completablefuture.accept;
+package completablefuture.combine;
 
 public class Application {
 

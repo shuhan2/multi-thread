@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class CounterTest {
+public class SynchronizedCounterTest {
 
   int count = 0;
 
@@ -17,7 +17,7 @@ public class CounterTest {
   void should_return_1000() throws InterruptedException {
     ExecutorService executor = Executors.newFixedThreadPool(4);
 
-//    Counter counter = new Counter();
+//    SynchronizedCounter counter = new SynchronizedCounter();
 
     IntStream.range(0, 1000).forEach(i -> executor.submit(this::increment));
     executor.shutdown();

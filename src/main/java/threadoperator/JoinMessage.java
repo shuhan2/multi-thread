@@ -11,7 +11,7 @@ public class JoinMessage implements Runnable {
     };
 
     for (String s : importantInfo) {
-      //Pause for 2 seconds
+
       Thread thread = Thread.currentThread();
 
       System.out.println(s);
