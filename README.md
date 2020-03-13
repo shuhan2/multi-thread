@@ -1,4 +1,4 @@
-# MultiThread in Java
+# Multiple Thread in Java
 
 ### Thread Create 
 - package threadcreator
