@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class CalculateSynchronizedCounterTest {
+class CalculateCounterTest {
 
   @Test
   public void should_return_1000_when_increment_1000_times() throws InterruptedException {
